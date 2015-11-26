@@ -1,4 +1,4 @@
 Bigbashview
 ===========
 
-New version
+New version 3.0

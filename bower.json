@@ -1,0 +1,9 @@
+{
+  "name": "bigbashview",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/libraries"
+  ]
+}

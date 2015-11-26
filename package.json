@@ -1,0 +1,10 @@
+{
+  "name": "bigbashview",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron app/main.js"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^0.35.0"
+  }
+}
