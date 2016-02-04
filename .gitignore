@@ -1,13 +1,1 @@
-*.swp
-*~
-.DS_Store
-Thumbs.db
-
-.nvm-version
-node_modules
-*.log*
-
-.grunt
-.lock-wscript
-
-!.gitignore
+__pycache__

@@ -1,8 +1,0 @@
-Package: bigbashview
-Version: 3.0.0.0
-Architecture: all
-Maintainer: Kaiana Developers <www.kaiana.com.br>
-Section: admin
-Priority: optional
-Description: Graphical interface for bash with webkit engine.
-
