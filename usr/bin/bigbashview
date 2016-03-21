@@ -1,1 +1,6 @@
-../share/bigbashview/bigbashview.py -c "$@"
+#!/bin/bash
+
+CURRENT_DIRECTORY=$(pwd)
+PATH=$(dirname "$0")
+
+$CURRENT_DIRECTORY/$PATH/../share/bigbashview/main.py "$@"

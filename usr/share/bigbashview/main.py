@@ -1,6 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 from bigbashview import *
 
-Bigbashview().execute()
+bbv = Bigbashview()
+bbv.init()
+bbv.execute()
