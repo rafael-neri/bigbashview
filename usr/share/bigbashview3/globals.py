@@ -10,7 +10,7 @@ APP_VERSION = "3.0.0"
 
 # Directories
 PROGDIR = os.path.dirname(os.path.abspath(sys.argv[0]))
-DATA_DIR = os.path.expanduser("~/.bigbashview")
+DATA_DIR = os.path.expanduser("~/.bigbashview3")
 
 # Server
 ADDRESS = "127.0.0.1"
@@ -21,7 +21,7 @@ COMPAT = True
 WIDTH = -1
 HEIGHT = -1
 WINDOW_STATE = "normal"
-URL = "/"
+URL = ""
 
 # Extras
-ICON = os.sep.join((PROGDIR, "images", "icone.png"))
+ICON = os.sep.join((PROGDIR, "..", "icons", "bbv.png"))

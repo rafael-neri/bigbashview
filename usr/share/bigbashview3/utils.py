@@ -1,15 +1,16 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import sys
 import os
 import getopt
+import globals as globaldata
 
 
-class Utils:
+class utils:
 
     @staticmethod
-    def getOptionsAndArgs(argv):
+    def get_options_and_args(argv):
         try:
             options, arguments = getopt.gnu_getopt(
                 argv,
@@ -21,7 +22,7 @@ class Utils:
             raise Exception()
 
     @staticmethod
-    def parseOptions(options):
+    def parse_options(options):
         long_options = ["--help", "--version", "--screen", "--window_state", "--icon"]
         short_options = ["-h", "-v", "-s", "-w", "-i"]
 
@@ -44,14 +45,21 @@ class Utils:
                         raise Exception()
 
     @staticmethod
-    def help(self):
-        print('OPTIONS:')
-        print('    [-c|--compatibility-mode] URL')
-        print('    [-h|--help]')
-        print('    [-i|--icon image]')
-        print('    [-s|--screen=widthxheight]')
-        print('    [-v|--version]')
-        print('    [-w|--window_state=[normal|maximized|fullscreen]]')
+    def help():
+        print('Usage:')
+        print('    bigbashview3 [OPTIONS] [FILE|URL]')
+        print('')
+        print('Options:')
+        print('    -h, --help                                             Show help info.')
+        print('    -i, --icon image                                       Set icon image')
+        print('    -s, --screen=widthxheight                              Set dimensions of the window.')
+        print('    -v, --version                                          Show number version.')
+        print('    -w, --window_state=[normal|maximized|fullscreen]       Set Window state.')
+        sys.exit()
+
+    @staticmethod
+    def version():
+        print(globaldata.APP_NAME, globaldata.APP_VERSION)
         sys.exit()
 
 

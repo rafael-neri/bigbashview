@@ -1,26 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#
-#  Copyright (C) 2011 Thomaz de Oliveira dos Reis <thor27@gmail.com>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from urlparse import parse_qs
-from urlparse import unquote
+from urllib.parse import urlparse
+# from urlparse import parse_qs
+# from urlparse import unquote
 import subprocess
 import os
-import web
+# import web
 from .parser import parser
 from .utils import get_env_for_shell
 
@@ -33,12 +19,12 @@ class url_handler(object):
     __url__ = '/'
     
     def GET(self, name=''):
-        return self.parse_and_call(web.ctx.query[1:],name)
+        return self.parse_and_call(web.ctx.query[1:], name)
         
     def POST(self, name=''):
-        return self.parse_and_call(web.data(),name)
+        return self.parse_and_call(web.data(), name)
         
-    def parse_and_call(self,qs,name):
+    def parse_and_call(self, qs, name):
         qs = parse_qs(qs)
         options,content = self._get_set_default_options(name)
         html = self.called(options,content,qs)

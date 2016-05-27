@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PyQt5.QtCore import QObject, pyqtSignal, QUrl
+from PyQt5.QtCore import QObject, pyqtSignal, QUrl, QByteArray
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWebKitWidgets import QWebView
+from PyQt5.QtWebKitWidgets import QWebView, QWebPage
 from PyQt5.QtWebKit import QWebSettings
 from globals import ICON, DATA_DIR
+
 
 class Window():
 
@@ -18,17 +19,13 @@ class Window():
         self.web = QWebView()
         self.icon = QIcon(ICON)
         QWebSettings.setIconDatabasePath(DATA_DIR)
-        #self.web.page().setLinkDelegationPolicy(QWebPage.DelegateAllLinks)
+        # self.web.page().setLinkDelegationPolicy(QWebPage.DelegateAllLinks)
 
         # Signals
-        #self.connect(self.web, pyqtSignal("titleChanged ( const QString &)"), self.title_changed)
-        #self.connect(self.web, pyqtSignal("iconChanged ()"), self.icon_changed)
-        #self.connect(self.web.page(), pyqtSignal("windowCloseRequested ()"), self.close_window)
-        #self.connect(self.web.page(), pyqtSignal("geometryChangeRequested ( const QRect)"), self.set_geometry)
-
-    def handle_trigger(self):
-        # Show that the slot has been called.
-        print("trigger signal received")
+        # self.connect(self.web, pyqtSignal("titleChanged ( const QString &)"), self.title_changed)
+        # self.connect(self.web, pyqtSignal("iconChanged ()"), self.icon_changed)
+        # self.connect(self.web.page(), pyqtSignal("windowCloseRequested ()"), self.close_window)
+        # self.connect(self.web.page(), pyqtSignal("geometryChangeRequested ( const QRect)"), self.set_geometry)
 
     def show(self, window_state):
         if window_state == "maximized" and not self.web.isMaximized():
@@ -62,7 +59,7 @@ class Window():
         self.web.setWindowTitle(title)
 
     def load_url(self, url):
-        self.url = QUrl.fromEncoded(url)
+        self.url = QUrl(url)
         self.web.setUrl(self.url)
 
     def set_size(self, width, height):
