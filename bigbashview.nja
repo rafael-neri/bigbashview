@@ -1,0 +1,21 @@
+{
+  "mainFile": "usr/share/bigbashview3/main.py", 
+  "use-tabs": false, 
+  "venv": "", 
+  "relatedProjects": [], 
+  "name": "bigbashview", 
+  "license": "GNU General Public License v2", 
+  "url": "https://about.me/rafaelneri", 
+  "pythonPath": "python3", 
+  "preExecScript": "", 
+  "additional_builtins": [], 
+  "programParams": "", 
+  "indentation": 4, 
+  "PYTHONPATH": "", 
+  "supported-extensions": [
+    ".*"
+  ], 
+  "project-type": "", 
+  "postExecScript": "", 
+  "description": ""
+}
